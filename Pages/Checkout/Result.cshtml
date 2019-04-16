@@ -1,0 +1,14 @@
+@page
+@using rikchallengeweb.Pages.Checkout
+@using Newtonsoft.Json;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model ResultModel
+
+<h2>Checkout Page - Resultado</h2>
+
+Order Id: @Model.CheckoutResponse.processOrderId<br/>
+Status: @Model.CheckoutResponse.status<br/>
+@if (Model.CheckoutResponse.payloadType == "BOLETO_NUMBER") {
+    @: Boleto: @Model.CheckoutResponse.payload
+} 

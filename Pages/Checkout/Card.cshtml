@@ -1,0 +1,35 @@
+@page
+@using rikchallengeweb.Pages.Checkout
+@using Newtonsoft.Json;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model CardModel
+
+<h2>Checkout Page - Cartão de Crédito</h2>
+
+Pagamento para: @Model._checkoutOrder.client.id <br/>
+<br/>
+<b>Pagador</b> <br/>
+Nome: @Model._checkoutOrder.buyer.name <br/>
+Email: @Model._checkoutOrder.buyer.eMail <br/>
+CPF: @Model._checkoutOrder.buyer.cpf <br/>
+<br/>
+<b>Pagamento</b> <br/>
+Valor: @Model._checkoutOrder.payment.amount  <br/>
+Tipo: @Model._checkoutOrder.payment.type
+ <br/>
+@if (@Model.CardResponse != null && !@Model.CardResponse.isValid) 
+{
+    @: <b><font color="red">Card is invalid.</font></b>
+}
+<br/>
+<form method="post">
+    Nome impresso: <input asp-for="HolderName"/> <br/>
+    Número: <input asp-for="Number"/> <br/>
+    Expiração (formato mm/yyyy): <input asp-for="ExpirationDate"/> <br/>
+    CVV: <input asp-for="CVV"/> <br/>
+    <input asp-for="CheckoutOrder" />
+    <button type="submit">Submit</button>
+</form>
+
+<!-- 5555666677778884 -->

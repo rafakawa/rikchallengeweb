@@ -1,0 +1,22 @@
+@page
+@using rikchallengeweb.Pages.Checkout
+@using Newtonsoft.Json;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model PaymentModel
+
+<h2>Checkout Page - Pagamento</h2>
+
+Pagamento para: @Model._checkoutOrder.client.id <br/>
+<br/>
+Pagador: <br/>
+Nome: @Model._checkoutOrder.buyer.name <br/>
+Email: @Model._checkoutOrder.buyer.eMail <br/>
+CPF: @Model._checkoutOrder.buyer.cpf <br/>
+
+<form method="post">
+    Valor: <input asp-for="Value"/> <br/>
+    <select asp-for="PaymentType" asp-items="Model.PaymentTypeOptions"></select>
+    <input asp-for="CheckoutOrder" />
+    <button type="submit">Submit</button>
+</form>
