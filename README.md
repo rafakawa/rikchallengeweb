@@ -33,6 +33,10 @@ A integração final com a api de ProcessOrder está em Confirm.cshml.cs.
 A validação do cartão de crédito está no backend, ou no serviço que processamento de cartão. Fiz assim, pois a lógica está em um só lugar, e a biblioteca da Wirecard era mais fácil de integrar com kotlin.
 Para um projeto em produção, pensaria em escrever a mesma para .net e colocar direto nesta aplicação.
 
+## Data
+
+Objetos DTO, apenas para transporte de informações entre as páginas.
+
 ## Rodar
 
 Para rodar o projeto, é preciso:
