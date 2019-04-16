@@ -60,6 +60,8 @@ https://localhost:5001/Checkout/Identity
 
 Nota: O Id do cliente está fixo como "Client1", considerei que esta já era uma página do cliente e que seria necessário apenas as informações do comprador.
 
+Caso aparece algum erro de certificado, aceite ir para a área insegura, que a página aparecerá normalmente.
+
 A partir desta página é só seguir o fluxo. É necessário que o serviço da api já esteja de pé.
 
 Ele está configurado hard coded para o endereço local: https://localhost:8181.
